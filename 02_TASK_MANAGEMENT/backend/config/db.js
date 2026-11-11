@@ -7,7 +7,7 @@ export const connectDB = async () => {
     });
     console.log(`✅ [TaskManager Backend] MongoDB Atlas Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`❌ [TaskManager Backend] MongoDB connection error: ${error.message}`);
-    process.exit(1);
+    console.warn(`⚠️ [TaskManager Backend] MongoDB Atlas connection warning: ${error.message}`);
+    console.log('💡 Note: Ensure your current IP is added in MongoDB Atlas (Network Access -> IP Access List: 0.0.0.0/0)');
   }
 };
